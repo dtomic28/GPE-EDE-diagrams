@@ -19,7 +19,6 @@ title Main Loop
 
 start
 repeat
-  :Delay(10ms);
   :Read Fan and Button Status;
   :Read All Analog Inputs;
   :Update Brake Light;
