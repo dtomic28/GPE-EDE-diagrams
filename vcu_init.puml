@@ -20,15 +20,18 @@ title Initialization
 start
 :Initialize Variables;
 
+
+
+:HAL Initialization;
+:Initiate Peripherals;
+:Initiate Communications;
+:Read configuration from EPROM;
+
 if (Gas Pedal Parameters Valid?) then (yes)
   :Continue;
 else (no)
   :Enter Infinite Loop;
   stop
 endif
-
-:HAL Initialization;
-:Initiate Peripherals;
-:Initiate Communications;
 stop
 @enduml
