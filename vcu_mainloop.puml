@@ -1,0 +1,47 @@
+@startuml vcu_mainloop
+skinparam {
+    dpi 200
+    shadowing false
+    arrowFontSize 12
+    defaultFontSize 12
+    defaultTextAlignment center
+    arrowThickness 1
+    arrowColor black
+    arrowFontColor black
+    maxMessageSize 100
+    wrapWidth 200
+    nodeSpacing 50
+    rankSpacing 50
+    direction left to right
+}
+
+title Main Loop
+
+start
+repeat
+  :Delay(10ms);
+  :Read Fan and Button Status;
+  :Read All Analog Inputs;
+  :Update Brake Light;
+  :Calculate Torque From Gas Pedal;
+  :Calculate All Sensors;
+  :Send All Dashboard CAN Messages;
+  :Log Data to SD Card;
+
+  if (RTD AND Start Button Pressed) then (yes)
+    :Rtd Start;
+  endif
+
+  if (RTD Button Released and Start Button Released?) then (yes)
+    :Deactivate RTD;
+  endif
+
+  if (RTD Button Activated?) then (yes)
+    :Send Torque to Inverter;
+  else (no)
+    :Send Zero Torque to Inverter;
+    :Deactivate Inverter;
+  endif
+repeat while (true)
+stop
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+skinparam {
+    dpi 200
+    shadowing false
+    arrowFontSize 12
+    defaultFontSize 12
+    defaultTextAlignment center
+    arrowThickness 1
+    arrowColor black
+    arrowFontColor black
+    maxMessageSize 100
+    wrapWidth 200
+    nodeSpacing 50
+    rankSpacing 50
+    direction left to right
+}
+
+title Initialization
+
+start
+:Initialize Variables;
+
+if (Gas Pedal Parameters Valid?) then (yes)
+  :Continue;
+else (no)
+  :Enter Infinite Loop;
+  stop
+endif
+
+:HAL Initialization;
+:Initiate Peripherals;
+:Initiate Communications;
+stop
+@enduml

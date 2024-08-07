@@ -1,0 +1,27 @@
+@startuml
+skinparam {
+    dpi 200
+    shadowing false
+    arrowFontSize 12
+    defaultFontSize 12
+    defaultTextAlignment center
+    arrowThickness 1
+    arrowColor black
+    arrowFontColor black
+    maxMessageSize 100
+    wrapWidth 200
+    nodeSpacing 50
+    rankSpacing 50
+    direction top to bottom
+}
+
+title RtdStart Function Flowchart
+
+start
+: Activate buzzer for 2s;
+: Put Inverter into Ready to Drive Mode;
+: Turn on Water fan & Water pump;
+
+
+stop
+@enduml
